@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Soporte Tecnico</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            background-color: #001f3f;
+            color: white;
+        }
+        
+        
+        .sidebar {
+            width: 250px;
+            background-color: #001a33;
+            height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+            
+        }
+        
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 50px;
+            
+        }
+        
+        .sidebar ul li {
+            margin: 15px 0;
+            cursor: pointer;
+        }
+        .logo2{
+            top:10px;
+        
+        }
+        
+        .sidebar ul li:hover {
+            background-color: #003366;
+            padding: 5px;
+            border-radius: 5px;
+        }
+       
+        
+        .main {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        section {
+            margin-bottom: 40px;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            color: #ffffff;
+        }
+        
+        .bitacora {
+            background: #00264d;
+            border: 1px solid #ccc;
+            padding: 15px;
+            height: 200px;
+            overflow-y: auto;
+        }
+        
+        .entrada {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        
+        .entrada:last-child {
+            border-bottom: none;
+        }
+        
+        .formulario input,
+        .formulario textarea,
+        .formulario button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            box-sizing: border-box;
+            background-color: #001f3f;
+            color: white;
+            border: 1px solid #ccc;
+        }
+        
+        .formulario button {
+            background-color: #004080;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .formulario button:hover {
+            background-color: #0059b3;
+        }
+        
+        img,
+        video {
+            max-width: 100%;
+            margin-top: 10px;
+        }
+        
+        .tarifa-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        
+        .tarifa-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .tarifa-card h3 {
+            margin-top: 0;
+            color: #333;
+            font-size: 24px;
+        }
+        
+        .precio {
+            font-size: 36px;
+            font-weight: bold;
+            color: #007bff;
+            margin: 20px 0;
+        }
+        
+        .beneficios {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .beneficios li {
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <style>
+        .servicios-contenedor {
+            background-color: #f8f9fa;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .tarjetas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+      
+        
+        .tarjeta-servicio {
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        
+        .tarjeta-servicio:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+       
+        
+        .tarjeta-servicio .icono {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        
+        .tarjeta-servicio h3 {
+            font-size: 1.5rem;
+            color: #222;
+            margin-bottom: 15px;
+        }
+       
+        
+        .tarjeta-servicio p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        
+        .name {
+            margin-top: -15px;
+        }
+        
+    </style>
+
+
+    <style>
+        .contacto-tarjeta {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            padding: 24px;
+            width: 100%;
+            max-width: 350px;
+            font-family: 'Arial', sans-serif;
+            border-left: 5px solid #0056b3;
+        }
+        
+        .contacto-tarjeta h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #333333;
+            font-size: 1.2rem;
+        }
+        
+        .contacto-tarjeta ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .contacto-tarjeta li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #555555;
+            font-size: 0.95rem;
+        }
+        
+        .contacto-tarjeta li:last-child {
+            margin-bottom: 0;
+        }
+        
+        .contacto-tarjeta i {
+            margin-right: 12px;
+            font-size: 1.2rem;
+        }
+        
+        .contacto-tarjeta a {
+            text-decoration: none;
+            color: #0056b3;
+            transition: color 0.3s ease;
+        }
+        
+        .contacto-tarjeta a:hover {
+            color: #003d82;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h2 class="name">Soporte Tecnico</h2>
+        <ul>
+            <li onclick="mostrar('registro')">Registro</li>
+            <li onclick="mostrar('servicios')">Servicios</li>
+            <li onclick="mostrar('precios')">Precios</li>
+            <li onclick="mostrar('bitacora')">Bitácora</li>
+            <li onclick="mostrar('galeria')">Imágenes y Videos</li>
+            <li onclick="mostrar('empresa')">Empresa</li>
+            <li onclick="mostrar('contacto')">Contacto</li>
+        </ul>
+    </div>
+    <div class="logo2">
+        <img src="elis.jpeg" width="110px" height="125px" position fixed-top-right>
+    </div>
+   
+    <div class="main">
+        <section id="servicios">
+           
+            <h2 class="titulo-seccion">Nuestros Servicios</h2>
+
+            <div class="tarjetas-grid">
+                <!-- Servicio 1 -->
+                <div class="tarjeta-servicio">
+                    <div class="icono">💻</div>
+                    <h3>Mantenimiento preventivo</h3>
+                    <p style="text-align: justify;">Limpieza de archivos, Actualizaciones, Instalacion de antivirus
+                    </p>
+
+                </div>
+
+                
+                <div class="tarjeta-servicio">
+                    <div class="icono">💻</div>
+                    <h3>Mantenimiento correctivo</h3>
+                    <p style="text-align: justify;">Eliminación de virus y malware, Liberación de espacio, Formateo y reinstalación de programas</p>
+
+                </div>
+
+               
+                <div class="tarjeta-servicio">
+                    <div class="icono">💻</div>
+                    <h3>Soporte a distancia</h3>
+                    <p style="text-align: justify;">Instalación y configuración de paquetería, Eliminación de malware, configuración de antivirus, cortafuegos, Limpieza de archivos temporales y mejora de la velocidad</p>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="registro" style="display:none;">
+            <h1>Agregar registro</h1>
+            <div class="registro" id="registroLog"></div>
+            <div class="formulario">
+                <h2>Agregar</h2>
+                <input type="text" id="nombre" placeholder="Nombre completo">
+                <input type="text" id="servicio" placeholder="Servicio">
+                <input type="date" id="fecha" placeholder="Fecha">
+                <textarea id="comentario" rows="10" cols="50">Agrega un comentario</textarea>
+                <button onclick="agregarEntrada()">Guardar en Bitácora</button>
+            </div>
+        </section>
+
+
+       
+        <section id="precios" style="display:none;" class="">
+
+            <div class="tarjetas-grid">
+                
+                <div class=" tarifa-card">
+                    <h3>Mantenimiento preventivo</h3>
+                    <p class="precio">$500</p>
+                    <ul class="beneficios">
+                        <li></li>
+                        <li>Limpieza de archivos</li>
+                        <li>Actualizaciones</li>
+                        <li>Antivirus</li>
+                    </ul>
+
+                </div>
+
+               
+                <div class="tarifa-card">
+                    <h3>Mantenimiento Correctivo</h3>
+                    <p class="precio">$699</p>
+                    <ul class="beneficios">
+                        <li>Eliminación de virus y malware</li>
+                        <li>Liberación de espacio</li>
+                        <li>Formateo y reinstalación</li>
+                    </ul>
+                </div>
+
+              
+                <div class="tarifa-card">
+                    <h3>Soporte a distancia</h3>
+                    <p class="precio">$999</p>
+                    <ul class="beneficios">
+                        <li>Instalación y configuración de paquetería</li>
+                        <li>Eliminación de malware, configuración de antivirus, cortafuegos</li>
+                        <li>Limpieza de archivos temporales y mejora de la velocidad</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section id="bitacora" style="display:none;">
+            <h1>Bitácora de Servicios</h1>
+            <div class="bitacora" id="bitacoraLog"></div>
+            <div class="formulario">
+                <h3>Agregar entrada</h3>
+                <input type="text" id="titulo" placeholder="Título del servicio">
+                <textarea id="descripcion" placeholder="Descripción del servicio"></textarea>
+                <button onclick="agregarEntrada()">Guardar en Bitácora</button>
+            </div>
+        </section>
+
+        <section id="galeria" style="display:none;">
+            <h1>Galería</h1>
+            <img src="https://www.lanet.mx/wp-content/uploads/2024/12/4370a022thumbnail.jpeg" style=" border: 2px solid white;" alt="Imagen de servicio" width="400" height="250">
+            <video width="400" height="250" controls style=" border: 2px solid white;">
+        <source src="https://www.youtube.com/watch?v=mO0IxF2HJnM" type="video/mp4" >
+        Tu navegador no soporta video.
+      </video>
+            <img src="https://xpertic.com.mx/wp-content/uploads/2021/11/q.jpg" alt="Imagen de servicio" style=" border: 2px solid white;" width="400" height="250">
+            <img src="https://global.tiffin.edu/img/article/soporte-tecnico-informatico-por-que-es-importante-para-la-productividad-empresarial.webp" style=" border: 2px solid white;" alt="Imagen de servicio" width="400" height="250">
+        </section>
+
+        <section id="empresa" style="display:none;">
+            <h1>Nosotros</h1>
+            <b>Mision</b>
+            <p>Brindar soluciones de soporte técnico confiables, oportunas y de alta calidad que garanticen la continuidad operativa de nuestros clientes, mediante un servicio profesional, innovación tecnológica y atención personalizada.</p>
+            <b>Vision</b>
+            <p>Ser una empresa líder en soporte técnico y servicios tecnológicos, reconocida por la excelencia de nuestro servicio, la confianza de nuestros clientes y nuestra capacidad para adaptarnos a las nuevas tecnologías y necesidades del mercado.</p>
+            <b>Valores</b>
+            <ul>
+                <li>Compromiso: Cumplimos nuestras responsabilidades con dedicación y enfoque en los resultados.</li>
+                <li>Responsabilidad: Actuamos con profesionalismo y asumimos cada tarea con seriedad.</li>
+                <li>Orientación al cliente: Buscamos comprender y satisfacer las necesidades de nuestros clientes.</li>
+                <li>Innovación: Incorporamos nuevas tecnologías y mejores prácticas para ofrecer soluciones eficientes.</li>
+                <li>Integridad: Trabajamos con honestidad, transparencia y ética profesional.</li>
+            </ul>
+        </section>
+
+        <section id="contacto" style="display:none;">
+            <h1>Información de Contacto</h1>
+
+            <div class="contacto-tarjeta">
+                <h3>Información de Contacto</h3>
+                <ul>
+                    <li>
+                        <i class="icono-tel">📞</i>
+                        <span>+52 (447) 1307951</span>
+                    </li>
+                    <li>
+                        <i class="icono-email">✉️</i>
+                        <span>contacto@soportetecnico.com</span>
+                    </li>
+                    <li>
+                        <i class="icono-ubicacion">📍</i>
+                        <span>Maravatio, Mich.</span>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+    </div>
+
+    <script>
+        function mostrar(seccion) {
+            document.querySelectorAll('.main section').forEach(s => s.style.display = 'none');
+            document.getElementById(seccion).style.display = 'block';
+        }
+
+        function agregarEntrada() {
+            const titulo = document.getElementById('titulo').value;
+            const descripcion = document.getElementById('descripcion').value;
+            const bitacora = document.getElementById('bitacoraLog');
+
+
+        }
+    </script>
+</body>
+
+</html>
